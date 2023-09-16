@@ -20,6 +20,7 @@ const initialState = {
 };
 
 function reducer(state, action) {
+  console.log(state);
   switch (action.type) {
     case 'dataReceived':
       return { ...state, questions: action.payload, status: 'ready' };
@@ -49,6 +50,12 @@ function reducer(state, action) {
           state.points > state.highScore
             ? state.points
             : state.highScore,
+      };
+    case 'restart':
+      return {
+        ...initialState,
+        questions: state.questions,
+        status: 'ready',
       };
     default:
       throw new Error('Action unknown');
@@ -115,6 +122,7 @@ function App() {
             points={points}
             maxPossiblePoints={maxPossiblePoints}
             highScore={highScore}
+            dispatch={dispatch}
           />
         )}
       </Main>
