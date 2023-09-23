@@ -35,6 +35,30 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Merville",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-09-23T14:37:22.427Z",
+      "notes": "Add",
+      "position": {
+        "lat": "43.704197217736585",
+        "lng": "1.2744140625000002"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Bellevue-la-Montagne",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2023-09-23T14:51:11.701Z",
+      "notes": "New data",
+      "position": {
+        "lat": "45.22691596965003",
+        "lng": "3.8012695312500004"
+      },
+      "id": 98443199
     }
   ]
 }
