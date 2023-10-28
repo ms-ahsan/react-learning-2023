@@ -1,12 +1,7 @@
-
-import {
-  Form,
-  redirect,
-  useActionData,
-  useNavigation,
-} from 'react-router-dom';
+import { useState } from 'react';
+import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
 import { createOrder } from '../../services/apiRestaurant';
-import Button from '../../ui/Button'
+import Button from '../../ui/Button';
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -49,10 +44,11 @@ function CreateOrder() {
 
   return (
     <div className="px-4 py-6">
-    <h2 className="mb-8 text-xl font-semibold">Ready to order? Let's go!</h2>
+      <h2 className="mb-8 text-xl font-semibold">Ready to order? Let's go!</h2>
 
-      <Form method='POST'>
-      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
+      {/* <Form method="POST" action="/order/new"> */}
+      <Form method="POST">
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
           <label className="sm:basis-40">First Name</label>
           <input className="input grow" type="text" name="customer" required />
         </div>
@@ -109,14 +105,12 @@ function CreateOrder() {
 export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  console.log(data);
 
   const order = {
     ...data,
     cart: JSON.parse(data.cart),
     priority: data.priority === 'on',
   };
-  console.log(order);
 
   const errors = {};
   if (!isValidPhone(order.phone))
@@ -125,9 +119,13 @@ export async function action({ request }) {
 
   if (Object.keys(errors).length > 0) return errors;
 
-  const newOrder = await createOrder(order);
+  // If everything is okay, create new order and redirect
 
-  return redirect(`/order/${newOrder.id}`);
+  // const newOrder = await createOrder(order);
+
+  // return redirect(`/order/${newOrder.id}`);
+
+  return null;
 }
 
 export default CreateOrder;
