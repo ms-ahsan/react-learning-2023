@@ -15,7 +15,9 @@ function UpdateOrder({ order }) {
 export default UpdateOrder;
 
 export async function action({ request, params }) {
+  // params from url parameters, orderId from App.js
   const data = { priority: true };
+  // from api restaurant.js
   await updateOrder(params.orderId, data);
   return null;
 }
