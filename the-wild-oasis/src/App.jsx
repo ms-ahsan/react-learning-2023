@@ -1,13 +1,33 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import styled from 'styled-components';
+
+const H1 = styled.h1`
+  font-size: 30px;
+  font-weight: 600;
+`;
+
+const Button = styled.button`
+  font-size: 1.4rem;
+  padding: 1.2rem 1.6rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 7px;
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+`;
+
+const Input = styled.input`
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+`;
 
 function App() {
   return (
-    <>
-      <h1>Hello world</h1>
-    </>
+    <div>
+      <H1>Hello world</H1>
+      <Button>Check in</Button>
+    </div>
   );
 }
 
