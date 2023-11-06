@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
-
-const H1 = styled.h1`
-  font-size: 30px;
-  font-weight: 600;
-`;
+import Heading from './ui/Heading';
 
 const Button = styled.button`
   font-size: 1.4rem;
@@ -22,7 +18,7 @@ function App() {
     <>
       <GlobalStyles />
       <div>
-        <H1>Hello world</H1>
+        <Heading>Hello world</Heading>
         <Button>Check in</Button>
       </div>
     </>
